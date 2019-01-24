@@ -28,6 +28,7 @@ public class Main {
         String rootDir = "datasets/SourceFile/sourceFile_";
         String outDir = "datasets/";
         String[] projects = {"aspectj", "eclipseUI", "jdt", "swt", "tomcat"};
+//        String[] projects = {"swt", "tomcat"};
 //        String[] projects = {"aspectj"};
 
         init();
@@ -43,15 +44,20 @@ public class Main {
     }
 
     public static void init() {
-        total_project.put("aspectj", 2394);
-        total_project.put("eclipseUI", 17809);
-        total_project.put("jdt", 16302);
-        total_project.put("swt", 8560);
-        total_project.put("tomcat", 2567);
+//        total_project.put("aspectj", 2394);
+//        total_project.put("eclipseUI", 17809);
+//        total_project.put("jdt", 16302);
+//        total_project.put("swt", 8560);
+//        total_project.put("tomcat", 2567);
+        total_project.put("aspectj", 1406);
+        total_project.put("eclipseUI", 15179);
+        total_project.put("jdt", 12682);
+        total_project.put("swt", 8119);
+        total_project.put("tomcat", 2355);
     }
 
     public static void saveJson(String file, String project) {
-        // TODO
+        //
         logger.info(project + "  save to json");
 
         JSONArray astArray = JSONArray.fromObject(astList);
@@ -72,7 +78,6 @@ public class Main {
 
         logger.info(project + "  " + line + " / " + total_project.get(project));
 
-//        TODO :
         try {
             StringBuffer stringBuffer = new StringBuffer();
 
@@ -103,7 +108,7 @@ public class Main {
             String tempStr;
             int line = 1;
 
-            while ((tempStr = reader.readLine()) != null && line < 10) {
+            while ((tempStr = reader.readLine()) != null) {
                 parseFile(tempStr, line++, project);
             }
             reader.close();

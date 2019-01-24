@@ -3,11 +3,8 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.PackageDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
-import com.github.javaparser.ast.body.ConstructorDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.expr.MethodCallExpr;
-import com.github.javaparser.ast.expr.Name;
-import com.github.javaparser.ast.expr.SuperExpr;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
 import java.io.FileInputStream;
