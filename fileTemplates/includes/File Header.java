@@ -1,5 +1,0 @@
-/**
-    * @author: eumes
-    * @date: ${DATE}
-    *
-**/
