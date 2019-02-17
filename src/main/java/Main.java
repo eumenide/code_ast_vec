@@ -25,17 +25,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String rootDir = "datasets/SourceFile/sourceFile_";
-        String outDir = "datasets/";
-        String[] projects = {"aspectj", "eclipseUI", "jdt", "swt", "tomcat"};
+//        String rootDir = "datasets/SourceFile/sourceFile_";
+        String rootDir = "datasets/SourceFile/";
+        String outDir = "datasets/output/";
+//        String[] projects = {"aspectj", "eclipseUI", "jdt", "swt", "tomcat"};
 //        String[] projects = {"swt", "tomcat"};
-//        String[] projects = {"aspectj"};
+        String[] projects = {"aspectj"};
 
         init();
 
         for (String project : projects) {
             String fileName = rootDir + project + ".txt";
-            String outputFile = outDir + project + ".json";
+            String outputFile = outDir + project + "_ast_2.json";
             astList.clear();
             readFileByLines(fileName, project);
             saveJson(outputFile, project);
@@ -49,7 +50,7 @@ public class Main {
 //        total_project.put("jdt", 16302);
 //        total_project.put("swt", 8560);
 //        total_project.put("tomcat", 2567);
-        total_project.put("aspectj", 1406);
+        total_project.put("aspectj", 1405);
         total_project.put("eclipseUI", 15179);
         total_project.put("jdt", 12682);
         total_project.put("swt", 8119);
@@ -74,7 +75,10 @@ public class Main {
     }
 
     public static void parseFile(String fileName, int line, String project) {
-        fileName = fileName.substring(3);
+//        fileName = fileName.substring(3);
+
+        // bug Localization single
+        fileName = "datasets/SourceFile/sourceFile_" + project + '/' + fileName + ".java";
 
         logger.info(project + "  " + line + " / " + total_project.get(project));
 
